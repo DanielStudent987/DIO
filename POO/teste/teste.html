@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function cortarMatriz(matriz, x, y, size) {
+
+            if (x < 0 || y < 0 || x >= matriz.length || y >= matriz[0].length) {
+                return "Coordenadas iniciais inválidas.";
+            }
+
+            let resultado = [];
+
+            for (let i = x; i < x + size && i < matriz.length; i++) {
+                let linha = [];
+                for (let j = y; j < y + size && j < matriz[i].length; j++) {
+                    linha.push(matriz[i][j]);
+                }
+                resultado.push(linha);
+            }
+
+            return resultado;
+        }
+
+        function e(item, index) {
+            console.log(item + ":" + index);
+        }
+
+        let matriz = [
+            [10, 20, 30, 40, 50],
+            [60, 70, 80, 90, 100],
+            [110, 120, 130, 140, 150],
+            [160, 170, 180, 190, 200],
+            [210, 220, 230, 240, 250]
+        ];
+
+        let x = 1;
+        let y = 1;
+        let size = 3;
+
+        let resultado = cortarMatriz(matriz, x, y, size);
+
+        resultado.forEach(e);
+
+
+        
+    </script>
+</body>
+
+</html>
