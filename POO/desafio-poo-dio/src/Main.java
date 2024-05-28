@@ -18,6 +18,30 @@ public class Main {
         System.out.println(curso2);
 
         Mentoria mentoria = new Mentoria("JavaScript", "Eh isso mesmo", LocalDate.now());
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Java Development");
+        bootcamp.setDescricao("Descricao");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devDaniel = new Dev();
+        devDaniel.setNome("Daniel");
+        devDaniel.inscreverBootcamp(bootcamp);
+        System.out.println(devDaniel.getConteudoInscritos());
+        devDaniel.progredir();
+
+        Dev devTau = new Dev();
+        devTau.setNome("Tatau");
+        devTau.inscreverBootcamp(bootcamp);
+
+
+
+
+
+
+
         System.out.println(mentoria);
     }
 }
